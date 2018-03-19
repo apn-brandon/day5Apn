@@ -15,12 +15,20 @@ const buttonColor = "grey";
 class ControlBox extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { };
+  }
+
+  onPress = () => {
+      this.setState({
+          disabled: 'disabled'
+      })
   }
 
   render() {
 
     return (
       <TouchableHighlight
+        onPress={this.onPress}
         style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
       >
         <View style={styles.btnContainer}>
