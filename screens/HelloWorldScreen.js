@@ -47,25 +47,30 @@ export default class HelloWorldScreen extends React.Component {
     // return (
       <View>
         {/* <Text>{data[3]}</Text> */}
-        <Text>{this.state.data[1][3]}</Text>
+        <Text>{this.state.data[6][3]}</Text>
       </View>
       ));
     // );
   }
 
+//   for loop example
+  loopBoxes(jsonArr) {
+    var jsonData = 0;
+
+    for (var i = 0; i < jsonArr.length; i++) {
+        if (jsonArr[i].selected) {
+            jsonData++
+        }
+    }
+    return jsonData
+    console.log("Test for for loop", jsonData);
+  }
+
   render() {
 
-    // var buttonArr = 0 
-
-    // for (var i = 0; i < jsonData.length; i++) {
-    //     if (jsonData[i].selected) {
-    //         buttonArr++
-    //     }
-    // }
-    // return buttonArr
-
+    let jsonData = this.state.data
     // console.log("this.props.navigation = "+ util.inspect(this.props.navigation, false, null));
-    console.log("testing fucking number one", this.state.data);
+    console.log("testing number one", this.state.data);
     console.log("Testing", this.state.data[1]);
     console.log("Testing for index", this.state.data[2])
     var { params } = this.props.navigation.state;
