@@ -8,36 +8,59 @@ import {
 } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
+// for loop the button array section
+// buttonsListArr = initialArr.map(buttonInfo => (
+//     <Button key={buttonInfo[0]}>{buttonInfo[1]}</Button>
+//   ));
+
+//   let initialBoxArr = [
+//     {
+//       id: 1,
+//       text: "Box1"
+//     },
+//     {
+//       id: 1,
+//       text: "Box2"
+//     },
+//     {
+//       id: 1,
+//       text: "Box3"
+//     },
+//     {
+//       id: 1,
+//       text: "Box4"
+//     }
+//   ];
+
 // For Boxes to be displayed
 const buttonColor = "grey";
 
 // For Boxes
-class ControlBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
+// class ControlBox extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {};
+//   }
 
-  onPress = () => {
-      this.setState({
-          disabled: 'disabled'
-      })
-  }
+//   onPress = () => {
+//     this.setState({
+//       disabled: "disabled"
+//     });
+//   };
 
-  render() {
-
-    return (
-      <TouchableHighlight
-        onPress={this.onPress}
-        style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
-      >
-        <View style={styles.btnContainer}>
-          <Text style={styles.btnText}> {this.props.title}</Text>
-        </View>
-      </TouchableHighlight>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <TouchableHighlight
+//         onPress={this.onPress}
+//         style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
+//       >
+//         <View style={styles.btnContainer}>
+//           <Text style={styles.btnText}> {this.props.title}</Text>
+//         </View>
+//       </TouchableHighlight>
+//     );
+//   }
+// }
 
 // For stack navigator to be displayed
 const util = require("util");
@@ -58,10 +81,8 @@ export default class HomeScreen extends React.Component {
     return (
       <Grid>
         <Row>
-          <ControlBox title="1" />
-          <ControlBox title="2" />
-        </Row>
-        <Row>
+          {/* <ControlBox title="1" />
+          <ControlBox title="2" /> */}
           <View
             style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
           >
@@ -72,10 +93,49 @@ export default class HomeScreen extends React.Component {
                   content: "Hello World"
                 })
               }
+              title="1"
+            />
+          </View>
+          <View
+            style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
+          >
+            <Button
+              style={styles.btnText}
+              onPress={() =>
+                navigate("HelloWorld", {
+                  content: "Hello World"
+                })
+              }
+              title="2"
+            />
+          </View>
+        </Row>
+        <Row>
+          <View
+            style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
+          >
+            <Button
+              style={styles.btnText}
+              onPress={() =>
+                navigate("HelloWorld")
+              }
               title="3"
             />
           </View>
-          <ControlBox title="4" />
+          <View
+            style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
+          >
+            <Button
+              style={styles.btnText}
+              onPress={() =>
+                navigate("HelloWorld", {
+                  content: "Hello World"
+                })
+              }
+              title="4"
+            />
+          </View>
+          {/* <ControlBox title="4" /> */}
         </Row>
       </Grid>
     );
