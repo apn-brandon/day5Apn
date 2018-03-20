@@ -83,7 +83,7 @@ export default class HomeScreen extends React.Component {
         <Row>
           {/* <ControlBox title="1" />
           <ControlBox title="2" /> */}
-          <View
+          {/* <View
             style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
           >
             <Button
@@ -95,6 +95,17 @@ export default class HomeScreen extends React.Component {
               }
               title="1"
             />
+          </View> */}
+          <View
+            style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
+          >
+            <Button
+              style={styles.btnText}
+              onPress={() =>
+                navigate("HelloWorld")
+              }
+              title="1"
+            />
           </View>
           <View
             style={[styles.btnClickContain, { backgroundColor: buttonColor }]}
@@ -102,9 +113,7 @@ export default class HomeScreen extends React.Component {
             <Button
               style={styles.btnText}
               onPress={() =>
-                navigate("HelloWorld", {
-                  content: "Hello World"
-                })
+                navigate("HelloWorld")
               }
               title="2"
             />
